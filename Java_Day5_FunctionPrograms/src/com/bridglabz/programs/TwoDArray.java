@@ -11,10 +11,10 @@ public class TwoDArray {
 		System.out.print("Enter the number of row in array: " );
 		int n = utility.getIntValue();
 		
-		int[][] intArray = utility.getIntArray(m, n);
-		utility.printIntArray(intArray, m, n);
+		int[][] intArray = utility.getInt2DArray(m, n);
+		utility.printInt2DArray(intArray, m, n);
 		
-		double[][] ArrayOfdouble = utility.getDoubleArray(m, n);
-		utility.printDoubleArray(ArrayOfdouble, m, n);
+		double[][] ArrayOfdouble = utility.getDouble2DArray(m, n);
+		utility.printDouble2Array(ArrayOfdouble, m, n);
 	}
 }
