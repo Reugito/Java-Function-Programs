@@ -16,5 +16,8 @@ public class TwoDArray {
 		
 		double[][] ArrayOfdouble = utility.getDouble2DArray(m, n);
 		utility.printDouble2Array(ArrayOfdouble, m, n);
+		
+		boolean[][] booleanArray = utility.getBoolean2DArray(m, n);
+		utility.printBoolean2DArray(booleanArray, m, n);
 	}
 }

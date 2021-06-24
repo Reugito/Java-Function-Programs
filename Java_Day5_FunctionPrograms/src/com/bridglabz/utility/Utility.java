@@ -18,7 +18,7 @@ public class Utility {
 	public int[][] getInt2DArray(int m, int n) {
 		Utility utilityobj = new Utility();
 		int[][] array = new int[m][n];
-		System.out.println("Enter "+(m*n)+" elements in intArray");
+		System.out.println("Enter "+(m*n)+"integer values in intArray");
 		for(int i=0;i<m;i++) {
 			for(int j=0;j<n;j++) {
 				
@@ -30,11 +30,23 @@ public class Utility {
 	
 	public double[][] getDouble2DArray(int m, int n) {
 		double[][] array = new double[m][n];
-		System.out.println("Enter "+(m*n)+" elements in Doublearray");
+		System.out.println("Enter "+(m*n)+" double values in Doublearray");
 		for(int i=0;i<m;i++) {
 			for(int j=0;j<n;j++) {
 				
 				array[i][j]=scanner.nextDouble();
+			}
+		}
+		return array;
+	}
+	
+	public boolean[][] getBoolean2DArray(int m, int n) {
+		boolean[][] array = new boolean[m][n];
+		System.out.println("Enter "+(m*n)+" boolean values in Boolean array");
+		for(int i=0;i<m;i++) {
+			for(int j=0;j<n;j++) {
+				
+				array[i][j]=scanner.nextBoolean();
 			}
 		}
 		return array;
@@ -62,6 +74,16 @@ public class Utility {
 		}  
 	}
 	
+	public void printBoolean2DArray(boolean[][] Array, int m, int n) {
+		PrintWriter writer = new PrintWriter(System.out);
+		for (int i=0; i<m; i++){
+			for (int j=0; j<n; j++) {
+				writer.write(" arr[" + i + "][" + j + "] = "+Array[i][j]); 
+				writer.flush(); 
+			}
+			System.out.println();
+		}  
+	}
 	public int[] getArray(int n) {
 		Utility utilityobj = new Utility();
 		int[] array = new int[n];
@@ -95,5 +117,51 @@ public class Utility {
 			tripletCollection += str;
 			System.out.println(num1+", "+num2+", "+num3);
 		}
+	}
+	
+	public void getEuclidianDist(int x, int y) {
+		double distance;
+		distance = Math.sqrt(Math.pow(x, 2)+Math.pow(y, 2));
+		System.out.println("Euclidian distance from points = "+distance);
+	}
+
+	public void getRoots(int a, int b, int c) {
+		double root1, root2, delta;
+		delta = b*b - 4*a*c;
+		if(delta > 0) {
+			root1 = (-b + Math.sqrt(delta))/(2*a);
+			root2 = (-b - Math.sqrt(delta))/(2*a);
+			System.out.println("Roots of "+a+"x*x+"+b+"x"+c+" = "+root1+" "+root2);
+		}
+		else if (delta == 0) {
+
+		      root1 = root2 = -b / (2 * a);
+		      System.out.println("root1 = root2 = "+root1);
+		}
+		else {
+		      double real = -b / (2 * a);
+		      double imaginary = Math.sqrt(-delta) / (2 * a);
+		      System.out.println("root1 = "+real+"+"+imaginary);
+		      System.out.println("root1 = "+real+"-"+imaginary);
+		    }
+	}
+
+	public double getDoubleValue() {
+		return scanner.nextDouble();
+	}
+
+	public void getWindChill(double t, double v) {
+		if (t < 50 && t > -50) {
+			if(v >= 3 && v <= 120) {
+				double pow =Math.pow ((0.4275*t - 35.75)*v, 0.16);
+				double w = 35.74 + 0.6215*t + pow;
+				System.out.println("Wind chill = "+w);
+			}
+			else
+				System.out.println("wind speed v is not between 3 to 120 ");		
+		}
+		else
+			System.out.println("tempreture t is grater 50 ");
+		
 	}
 }
