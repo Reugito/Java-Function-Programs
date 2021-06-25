@@ -127,10 +127,11 @@ public class Utility {
 	}
 
 	public void getWindChill(double t, double v) {
-		if (t < 50 && t > -50) {
+		if (t < 50) {
 			if(v >= 3 && v <= 120) {
-				double pow =Math.pow ((0.4275*t - 35.75)*v, 0.16);
-				double w = 35.74 + 0.6215*t + pow;
+				double n = (0.4275*t - 35.75);
+				double pow =Math.pow (v, 0.16);
+				double w = (35.74 + 0.6215*t) +n*pow;
 				System.out.println("Wind chill = "+w);
 			}
 			else
