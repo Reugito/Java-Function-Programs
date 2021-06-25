@@ -15,8 +15,8 @@ public class Utility {
 		return scanner.nextInt();
 	}
 	
-	public int[][] getInt2DArray(int m, int n) {
-		int[][] array = new int[m][n];
+	public Integer[][] getInt2DArray(int m, int n) {
+		Integer[][] array = new Integer[m][n];
 		System.out.println("Enter "+(m*n)+"integer values in intArray");
 		for(int i=0;i<m;i++) {
 			for(int j=0;j<n;j++) {
@@ -27,8 +27,8 @@ public class Utility {
 		return array;
 	}
 	
-	public double[][] getDouble2DArray(int m, int n) {
-		double[][] array = new double[m][n];
+	public Double[][] getDouble2DArray(int m, int n) {
+		Double[][] array = new Double[m][n];
 		System.out.println("Enter "+(m*n)+" double values in Doublearray");
 		for(int i=0;i<m;i++) {
 			for(int j=0;j<n;j++) {
@@ -39,8 +39,8 @@ public class Utility {
 		return array;
 	}
 	
-	public boolean[][] getBoolean2DArray(int m, int n) {
-		boolean[][] array = new boolean[m][n];
+	public Boolean[][] getBoolean2DArray(int m, int n) {
+		Boolean[][] array = new Boolean[m][n];
 		System.out.println("Enter "+(m*n)+" boolean values in Boolean array");
 		for(int i=0;i<m;i++) {
 			for(int j=0;j<n;j++) {
@@ -51,18 +51,7 @@ public class Utility {
 		return array;
 	}
 	
-	public void printInt2DArray(int[][] IntArray, int m, int n) {
-		PrintWriter writer = new PrintWriter(System.out);
-		for (int i=0; i<m; i++){
-			for (int j=0; j<n; j++) {
-				writer.write(" arr[" + i + "][" + j + "] = "+IntArray[i][j]); 
-				writer.flush(); 
-			}
-			System.out.println();
-		}  
-	}
-	
-	public void printDouble2Array(double[][] Array, int m, int n) {
+	public <t>void printArray(t[][] Array, int m, int n) {
 		PrintWriter writer = new PrintWriter(System.out);
 		for (int i=0; i<m; i++){
 			for (int j=0; j<n; j++) {
@@ -73,16 +62,6 @@ public class Utility {
 		}  
 	}
 	
-	public void printBoolean2DArray(boolean[][] Array, int m, int n) {
-		PrintWriter writer = new PrintWriter(System.out);
-		for (int i=0; i<m; i++){
-			for (int j=0; j<n; j++) {
-				writer.write(" arr[" + i + "][" + j + "] = "+Array[i][j]); 
-				writer.flush(); 
-			}
-			System.out.println();
-		}  
-	}
 	public int[] getArray(int n) {
 		int[] array = new int[n];
 		System.out.println("Enter "+n+" elements in intArray");
