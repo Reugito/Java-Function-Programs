@@ -16,13 +16,12 @@ public class Utility {
 	}
 	
 	public int[][] getInt2DArray(int m, int n) {
-		Utility utilityobj = new Utility();
 		int[][] array = new int[m][n];
 		System.out.println("Enter "+(m*n)+"integer values in intArray");
 		for(int i=0;i<m;i++) {
 			for(int j=0;j<n;j++) {
 				
-				array[i][j]=utilityobj.getIntValue();
+				array[i][j]=getIntValue();
 			}
 		}
 		return array;
@@ -85,22 +84,20 @@ public class Utility {
 		}  
 	}
 	public int[] getArray(int n) {
-		Utility utilityobj = new Utility();
 		int[] array = new int[n];
 		System.out.println("Enter "+n+" elements in intArray");
 		for(int i=0;i<n;i++) {
-			array[i]=utilityobj.getIntValue();
+			array[i]=getIntValue();
 		}
 		return array;	
 	}
 	
 	public void getSumAddZero(int[] array, int n) {
-		Utility utilityobj1 = new Utility();
 		for(int i=0;i<n;i++) {
 			for(int j=i+1; j<n; j++) {
 				for(int k=j+1; k<n; k++) {
 					if(array[i]+array[j]+array[k] == 0) {
-						utilityobj1.distinctTripplet(array[i],array[j],array[k]);
+						distinctTripplet(array[i],array[j],array[k]);
 					}
 				}
 			}
